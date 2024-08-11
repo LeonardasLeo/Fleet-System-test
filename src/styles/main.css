@@ -1,0 +1,92 @@
+body {
+  font-family: "Inter";
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(0, 125, 217) 0%, rgb(42, 32, 161) 40%, rgb(54, 33, 88) 100%);
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.container .vector1 {
+  height: 853px;
+  width: 853px;
+  position: absolute;
+  left: -50px;
+  bottom: 0;
+}
+.container .vector {
+  height: 580px;
+  width: 580px;
+  position: absolute;
+  top: -190px;
+  left: 500px;
+}
+.container .sub-container-1 {
+  flex: 1;
+}
+.container .sub-container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+  height: 100%;
+  background-color: white;
+  clip-path: ellipse(90% 100% at 100% 52%);
+}
+
+.button-general {
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: white;
+}
+
+.primary, .secondary, .delete {
+  min-width: 160px;
+  min-height: 48px;
+}
+
+.primary:hover, .secondary:hover, .delete:hover {
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #286EE6;
+}
+.primary:hover {
+  background-color: #1757c4;
+}
+
+.secondary {
+  background-color: gray;
+}
+.secondary:hover {
+  background-color: #676767;
+}
+
+.delete {
+  background-color: red;
+}
+.delete:hover {
+  background-color: #cc0000;
+}
+
+.textInput {
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #D0D5DD;
+  height: 36px;
+  padding: 8px;
+  width: 505px;
+}
+
+/*# sourceMappingURL=main.css.map */

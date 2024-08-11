@@ -1,0 +1,41 @@
+.button-general {
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: white;
+}
+
+.primary, .secondary, .delete{
+    min-width: 160px;
+    min-height: 48px;
+}
+
+.primary:hover, .secondary:hover, .delete:hover{
+    cursor: pointer;
+}
+
+.primary {
+    background-color: $button-primary;
+    
+    &:hover {
+        background-color: darken($button-primary, 10%);
+    }
+}
+
+.secondary {
+    background-color: $button-secondary;
+
+    &:hover {
+        background-color: darken($button-secondary, 10%);
+    }
+}
+
+.delete {
+    background-color: $button-delete;
+
+    &:hover{
+        background-color: darken($button-delete, 10%);
+    }
+}

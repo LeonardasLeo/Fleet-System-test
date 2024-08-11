@@ -1,0 +1,9 @@
+body {
+    font-family: "Inter";
+    margin: 0;
+}
+
+@import './_colors';
+@import './mainScreen.scss';
+@import './button.scss';
+@import './textInput.scss';
