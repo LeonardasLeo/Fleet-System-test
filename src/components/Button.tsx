@@ -2,19 +2,19 @@ import React from 'react';
 
 type Props = {
   type: 'primary';
-  value: string;
+  title: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
 };
 
-const Button = React.memo<Props>(({ type, value, onClick, disabled }) => {
+const Button = React.memo<Props>(({ type, title, onClick, disabled }) => {
   return (
     <>
       <button 
       className={`button-general ${disabled ? `${type}-disabled` : type}`} 
       onClick={disabled ? undefined : onClick}
       disabled={disabled}>
-        {value}
+        {title}
       </button>
     </>
   );

@@ -23,32 +23,30 @@ function App() {
     }
   }, [isSignedIn])
 
-  const onChangeUsername = useCallback((text: string) => {
-    setUsername(text)
-    ToggleButtonDisabled()
-  }, [username])
-
-  const onChangePassword = useCallback((text: string) => {
-    setPassword(text)
-    ToggleButtonDisabled()
-  }, [password])
-
-  const ToggleButtonDisabled = useCallback(() => {
-    if (username === '' || password === '') {
-      setButtonDisabled(true)
-      return
+  useEffect(() => {
+    if (username && password) {
+      setButtonDisabled(false);
+      return;
     }
-    setButtonDisabled(false)
-  }, [username, password])
+    setButtonDisabled(true);
+  }, [username, password]);
 
-  async function loginButtonClicked () {
+  const onChangeUsername = useCallback((text: string): void => {
+    setUsername(text);
+  }, []);
+
+  const onChangePassword = useCallback((text: string): void => {
+    setPassword(text);
+  }, []);
+
+  const onLoginButtonClicked = async (): Promise<void> => {
     const settings = {
       method: 'POST',
       'Content-type': 'application/json',
-      body: JSON.stringify({username, password})
-    }
+      body: JSON.stringify({ username, password }),
+    };
 
-    const response: Response = await fetch('https://auth-fscc.free.beeceptor.com/auth', settings)
+    const response: Response = await fetch('https://auth-fscc.free.beeceptor.com/auth',settings);
 
     if (response.ok) {
       localStorage.setItem('username', username)
@@ -59,7 +57,7 @@ function App() {
     }
   }
 
-  function logoutButtonClicked () {
+  const logoutButtonClicked = (): void => {
     localStorage.removeItem('username')
     setIsSignedIn(false)
   }
@@ -69,9 +67,7 @@ function App() {
       <img className='loop-icon' src={loopIcon} alt="" />
       <img className='loop-icon-2' src={loopIcon2} alt="" />
       <img className='loop-icon-tablet' src={loopIconTablet} alt="" />
-      <div className='sub-container-1'>
-
-      </div>
+      <div className='sub-container-1'></div>
       <div className='sub-container-2'>
         <img className='oms-logo' src={OMS} alt="" />
         <img className='fscc-logo' src={FSCC} alt="" />
@@ -79,15 +75,15 @@ function App() {
           {isSignedIn ? 
           <>
             <p className='username-display'><b>Username:</b> {username}</p>
-            <Button type='primary' value='Atsijungti' onClick={logoutButtonClicked}/>
+            <Button type='primary' title='Atsijungti' onClick={logoutButtonClicked}/>
           </>
           :
           <>
             <TextInput type='regular' placeholder='Vartotojo vardas' autoFocus={true} onChange={onChangeUsername}/>
             <TextInput type='secure' placeholder='Slaptažodis' onChange={onChangePassword}/>
-            <Button type='primary' value='Prisijungti' onClick={loginButtonClicked} disabled={buttonDisabled}/>
+            <Button type='primary' title='Prisijungti' onClick={onLoginButtonClicked} disabled={buttonDisabled}/>
           </>
-        }
+          }
          
         </div>
       </div>
