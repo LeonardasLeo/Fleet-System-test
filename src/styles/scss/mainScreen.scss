@@ -6,8 +6,9 @@
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    position: relative;
 
-    .vector1 {
+    .loop-icon {
         height: 70%;
         width: 50%;
         position: absolute;
@@ -15,12 +16,16 @@
         bottom: 0;
     }
 
-    .vector {
+    .loop-icon-2 {
         height: 50%;
         width: 30%;
         position: absolute;
         top: -15%;
         left: 20%;
+    }
+
+    .loop-icon-tablet{
+        display: none;
     }
 
     .sub-container-1 {
@@ -32,6 +37,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative;
         gap: 20px;
         flex: 1;
         height: 100%;
@@ -44,20 +50,72 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        position: relative;
     }
 
     .oms-logo{
         width: 160px;
         position: absolute;
-        left: 35%;
-        top: -70%;
+        top: 15%;
+        right: 34%;
     }
 
     .fscc-logo{
         width: 60px;
         position: absolute;
-        left: 46%;
-        bottom: -140%;
+        bottom: 5%;
+        right: 40%;
+    }
+
+    .username-display{
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+
+        .sub-container-2 {
+            flex: 8;
+            width: 100%;
+            clip-path: ellipse(130% 50% at 50% 70%);
+        }
+
+        .form-wrapper {
+            margin-left: 0;
+            margin-bottom: -30%;
+        }
+
+        .oms-logo{
+            top: 32%;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .fscc-logo{
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+        }
+
+        .loop-icon{
+            display: none;
+        }
+
+        .loop-icon-2 {
+            height: 80%;
+            width: 50%;
+            top: -10%;
+            right: -12%;
+            rotate: 106deg;
+            left: unset;
+        }
+
+        .loop-icon-tablet{
+            position: absolute;
+            display: block;
+            top: 2%;
+            left: 0;
+        }
     }
 }
