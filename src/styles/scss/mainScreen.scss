@@ -1,34 +1,34 @@
-.container{
+.container {
     display: flex;
     height: 100vh;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,125,217,1) 0%, rgba(42,32,161,1) 40%, rgba(54,33,88,1) 100%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 125, 217, 1) 0%, rgba(42, 32, 161, 1) 40%, rgba(54, 33, 88, 1) 100%);
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    
-    .vector1{
-        height: 853px;
-        width: 853px;
+
+    .vector1 {
+        height: 70%;
+        width: 50%;
         position: absolute;
-        left: -50px;
+        left: -10%;
         bottom: 0;
     }
 
-    .vector{
-        height: 580px;
-        width: 580px;
+    .vector {
+        height: 50%;
+        width: 30%;
         position: absolute;
-        top: -190px;
-        left: 500px;
+        top: -15%;
+        left: 20%;
     }
 
-    .sub-container-1{
+    .sub-container-1 {
         flex: 1;
     }
 
-    .sub-container-2{
-        display: flex;  
+    .sub-container-2 {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -36,6 +36,28 @@
         flex: 1;
         height: 100%;
         background-color: white;
-        clip-path: ellipse(90% 100% at 100% 52%);
+        clip-path: ellipse(100% 100% at 100% 50%);
+    }
+
+    .form-wrapper {
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+    }
+
+    .oms-logo{
+        width: 160px;
+        position: absolute;
+        left: 35%;
+        top: -70%;
+    }
+
+    .fscc-logo{
+        width: 60px;
+        position: absolute;
+        left: 46%;
+        bottom: -140%;
     }
 }

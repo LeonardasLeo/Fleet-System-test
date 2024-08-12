@@ -13,18 +13,18 @@ body {
   align-items: center;
 }
 .container .vector1 {
-  height: 853px;
-  width: 853px;
+  height: 70%;
+  width: 50%;
   position: absolute;
-  left: -50px;
+  left: -10%;
   bottom: 0;
 }
 .container .vector {
-  height: 580px;
-  width: 580px;
+  height: 50%;
+  width: 30%;
   position: absolute;
-  top: -190px;
-  left: 500px;
+  top: -15%;
+  left: 20%;
 }
 .container .sub-container-1 {
   flex: 1;
@@ -38,7 +38,26 @@ body {
   flex: 1;
   height: 100%;
   background-color: white;
-  clip-path: ellipse(90% 100% at 100% 52%);
+  clip-path: ellipse(100% 100% at 100% 50%);
+}
+.container .form-wrapper {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.container .oms-logo {
+  width: 160px;
+  position: absolute;
+  left: 35%;
+  top: -70%;
+}
+.container .fscc-logo {
+  width: 60px;
+  position: absolute;
+  left: 46%;
+  bottom: -140%;
 }
 
 .button-general {
@@ -87,6 +106,13 @@ body {
   height: 36px;
   padding: 8px;
   width: 505px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 3%;
+  top: 47%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

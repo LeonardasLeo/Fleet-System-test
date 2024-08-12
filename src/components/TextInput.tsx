@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { MutableRefObject, useRef, useState } from 'react';
+import eye from '../assets/eye.svg';
 
 type Props = {
     type: 'regular' | 'secure'
@@ -8,16 +9,26 @@ type Props = {
 };
 
 const TextInput: React.FC<Props> = ({type, placeholder, onChange, autoFocus}) => {
+  let [visibility, setVisibility] = useState<string>(type);
+  
+  function toggleVisibility(): void {
+    if (visibility === 'secure') {
+      setVisibility('regular')
+      return
+    }
+    setVisibility('secure')
+  }
   return (
-    <>
+    <div>
         <input 
         className='textInput' 
-        type={type === 'regular' ? 'text' : 'password'} 
+        type={visibility === 'regular' ? 'text' : 'password'} 
         placeholder={placeholder}
         onChange={onChange}
         autoFocus={autoFocus}
         />
-    </>
+        {type === 'secure' && <img onClick={() => toggleVisibility()} className='eye-icon' src={eye} alt="" />}
+    </div>
   );
 };
 
